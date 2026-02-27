@@ -1,0 +1,149 @@
+:root {
+  --bg: #0f172a;
+  --panel: #1e293b;
+  --text: #e2e8f0;
+  --muted: #94a3b8;
+  --accent: #38bdf8;
+  --danger: #f87171;
+  --safe: #4ade80;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", "PingFang SC", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.hero {
+  padding: 24px;
+  border-bottom: 1px solid #334155;
+  background: linear-gradient(120deg, #0f172a, #1d4ed8);
+}
+
+.hero h1 {
+  margin: 0 0 8px;
+  font-size: 28px;
+}
+
+.layout {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  display: grid;
+  gap: 16px;
+}
+
+.card {
+  background: var(--panel);
+  border: 1px solid #334155;
+  border-radius: 14px;
+  padding: 16px;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.hint {
+  color: var(--accent);
+  margin: 8px 0 0;
+  font-size: 14px;
+}
+
+.form-grid {
+  margin: 14px 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+}
+
+label {
+  display: grid;
+  gap: 6px;
+  color: var(--muted);
+}
+
+input,
+select,
+button {
+  border-radius: 8px;
+  border: 1px solid #475569;
+  background: #0b1220;
+  color: var(--text);
+  padding: 8px;
+}
+
+button {
+  cursor: pointer;
+  background: #0ea5e9;
+  border: none;
+  font-weight: 600;
+}
+
+button:hover {
+  background: #0284c7;
+}
+
+ul {
+  margin: 0;
+  padding-left: 18px;
+  line-height: 1.7;
+}
+
+.map-shell {
+  width: min(100%, 560px);
+  border: 1px solid #475569;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+#mapCanvas {
+  width: 100%;
+  display: block;
+  background: #0b1220;
+}
+
+.legend {
+  margin-top: 10px;
+  color: var(--muted);
+}
+
+.dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin: 0 6px 0 12px;
+}
+
+.dot.danger {
+  background: var(--danger);
+}
+
+.dot.safe {
+  background: var(--safe);
+}
+
+.timeline-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+#timelineSlider {
+  flex: 1;
+}
+
+#timelineLabel {
+  font-weight: 600;
+  color: var(--accent);
+  min-width: 48px;
+}
