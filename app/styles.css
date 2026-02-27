@@ -51,6 +51,13 @@ body {
   gap: 16px;
 }
 
+
+.hint {
+  color: var(--accent);
+  margin: 8px 0 0;
+  font-size: 14px;
+}
+
 .form-grid {
   margin: 14px 0;
   display: grid;
