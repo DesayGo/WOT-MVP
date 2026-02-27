@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WOT MVP - 战斗助手 / 复盘教练</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <h1>WOT MVP：战斗助手 / 复盘教练</h1>
+      <p>不接管操作，只做战术建议与训练复盘。</p>
+    </header>
+
+    <main class="layout">
+      <section class="card uploader">
+        <h2>1) 录像输入（.wotreplay）</h2>
+        <input id="replayInput" type="file" accept=".wotreplay" />
+        <p id="fileHint">请上传录像文件，系统将生成态势分析建议。</p>
+
+        <div class="form-grid">
+          <label>地图
+            <select id="mapSelect">
+              <option>荒蛮之地</option>
+              <option>普罗霍洛夫卡</option>
+              <option>锡默尔斯多夫</option>
+              <option>湖边的角逐</option>
+            </select>
+          </label>
+          <label>己方存活
+            <input id="allyAlive" type="number" min="0" max="15" value="8" />
+          </label>
+          <label>敌方存活
+            <input id="enemyAlive" type="number" min="0" max="15" value="10" />
+          </label>
+          <label>敌方重坦数量
+            <input id="heavyCount" type="number" min="0" max="10" value="4" />
+          </label>
+          <label>敌方中坦数量
+            <input id="mediumCount" type="number" min="0" max="10" value="3" />
+          </label>
+          <label>敌方TD数量
+            <input id="tdCount" type="number" min="0" max="10" value="2" />
+          </label>
+        </div>
+
+        <button id="analyzeBtn">生成分析建议</button>
+      </section>
+
+      <section class="grid-2">
+        <article class="card">
+          <h2>2) 战场感知面板</h2>
+          <ul id="awarenessList"></ul>
+        </article>
+
+        <article class="card">
+          <h2>3) 实时建议</h2>
+          <ul id="realtimeList"></ul>
+        </article>
+
+        <article class="card">
+          <h2>4) 对线建议</h2>
+          <ul id="duelList"></ul>
+        </article>
+
+        <article class="card">
+          <h2>5) 战后复盘</h2>
+          <ul id="reviewList"></ul>
+        </article>
+      </section>
+
+      <section class="card">
+        <h2>6) 地图标注（危险区 / 建议转场）</h2>
+        <canvas id="mapCanvas" width="560" height="560" aria-label="地图标注"></canvas>
+        <p class="legend">
+          <span class="dot danger"></span> 危险点位
+          <span class="dot safe"></span> 建议转场点
+        </p>
+      </section>
+    </main>
+
+    <script src="./main.js"></script>
+  </body>
+</html>
